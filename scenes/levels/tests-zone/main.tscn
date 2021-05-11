@@ -1,0 +1,154 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://scenes/objects/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/classes/ladder/Ladder.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 303, 35 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 137, 33 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 31, 148 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 18, 3 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 4, 92 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 10, 2 )
+
+[sub_resource type="Environment" id=7]
+background_mode = 4
+glow_strength = 0.8
+
+[node name="main" type="Node"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 409, -352 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+
+[node name="Level" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Level"]
+position = Vector2( 297, 190 )
+collision_layer = 7
+collision_mask = 7
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D"]
+modulate = Color( 0.137255, 0.486275, 0.737255, 0.368627 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="Level"]
+position = Vector2( 295, -109 )
+collision_layer = 7
+collision_mask = 7
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D7"]
+modulate = Color( 0.137255, 0.486275, 0.737255, 0.368627 )
+shape = SubResource( 2 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Level"]
+position = Vector2( 569, 7 )
+collision_layer = 7
+collision_mask = 7
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D2"]
+modulate = Color( 0.137255, 0.486275, 0.737255, 0.368627 )
+shape = SubResource( 3 )
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="Level"]
+position = Vector2( 631, -185 )
+collision_layer = 7
+collision_mask = 7
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D6"]
+modulate = Color( 0.137255, 0.486275, 0.737255, 0.368627 )
+shape = SubResource( 3 )
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="Level"]
+position = Vector2( 25, 7 )
+collision_layer = 7
+collision_mask = 7
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D5"]
+modulate = Color( 0.137255, 0.486275, 0.737255, 0.368627 )
+shape = SubResource( 3 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Level"]
+position = Vector2( 507, 127 )
+collision_layer = 7
+collision_mask = 7
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level/StaticBody2D3"]
+polygon = PoolVector2Array( -42, 28, 31, -17, 31, 28 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Level"]
+position = Vector2( 88, 127 )
+scale = Vector2( -1, 1 )
+collision_layer = 7
+collision_mask = 7
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level/StaticBody2D4"]
+polygon = PoolVector2Array( -37, 28, 31, -22, 31, 28 )
+
+[node name="Ladder" type="Area2D" parent="Level"]
+position = Vector2( 408, -234 )
+script = ExtResource( 2 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Level/Ladder"]
+position = Vector2( 0, -93 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Ladder/StaticBody2D"]
+modulate = Color( 0, 1, 0.623529, 0.380392 )
+position = Vector2( 1, 0 )
+shape = SubResource( 4 )
+
+[node name="LadderCheck" type="CollisionShape2D" parent="Level/Ladder"]
+modulate = Color( 0, 0.101961, 1, 0.32549 )
+shape = SubResource( 5 )
+
+[node name="Area2D" type="Area2D" parent="Level/Ladder"]
+position = Vector2( 0, -95 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Ladder/Area2D"]
+modulate = Color( 0.87451, 0.866667, 0.0588235, 0.482353 )
+shape = SubResource( 6 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 7 )

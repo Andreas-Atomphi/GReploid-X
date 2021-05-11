@@ -1,0 +1,2368 @@
+[gd_scene load_steps=155 format=2]
+
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Idle/008.png" type="Texture" id=1]
+[ext_resource path="res://scenes/objects/Player/X.gd" type="Script" id=2]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Idle/010.png" type="Texture" id=3]
+[ext_resource path="res://scenes/objects/Player/FSM.gd" type="Script" id=4]
+[ext_resource path="res://scenes/objects/Player/Player.gd" type="Script" id=5]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Walking/WalkLoop/009.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Walking/WalkLoop/011.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Walking/WalkLoop/002.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Walking/WalkLoop/007.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Walking/WalkLoop/001.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Walking/WalkLoop/003.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Jump/007.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Walking/WalkLoop/004.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Jump/006.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Idle/001.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Idle/009.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Jump/004.png" type="Texture" id=17]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Jump/008.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Land/003.png" type="Texture" id=19]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Land/001.png" type="Texture" id=20]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Wall/WallKick/001.png" type="Texture" id=21]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Walking/WalkLoop/005.png" type="Texture" id=22]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Walking/WalkLoop/010.png" type="Texture" id=23]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Walking/WalkLoop/012.png" type="Texture" id=24]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Walking/WalkLoop/008.png" type="Texture" id=25]
+[ext_resource path="res://addons/sprite_trail/SpriteTrail.gd" type="Script" id=26]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Dash/DashLoop/002.png" type="Texture" id=27]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Dash/DashLoop/001.png" type="Texture" id=28]
+[ext_resource path="res://scripts/classes/Extensions/Animator-Extension.gd" type="Script" id=29]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Wall/WallCling/003.png" type="Texture" id=30]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Wall/WallKick/003.png" type="Texture" id=31]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Wall/WallKick/002.png" type="Texture" id=32]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Wall/WallCling/002.png" type="Texture" id=33]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Wall/WallCling/001.png" type="Texture" id=34]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Walking/WalkLoop/Shooting/012.png" type="Texture" id=35]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Walking/WalkLoop/Shooting/001.png" type="Texture" id=36]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Walking/WalkLoop/Shooting/013.png" type="Texture" id=37]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Walking/WalkLoop/Shooting/007.png" type="Texture" id=38]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Walking/WalkLoop/Shooting/010.png" type="Texture" id=39]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Idle/Shooting/005.png" type="Texture" id=40]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Walking/WalkLoop/Shooting/009.png" type="Texture" id=41]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Walking/WalkLoop/Shooting/014.png" type="Texture" id=42]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Jump/Shooting/007.png" type="Texture" id=43]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Idle/Shooting/001.png" type="Texture" id=44]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Jump/Shooting/002.png" type="Texture" id=45]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Jump/Shooting/004.png" type="Texture" id=46]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Jump/Shooting/001.png" type="Texture" id=47]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Jump/Shooting/003.png" type="Texture" id=48]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Walking/WalkLoop/Shooting/008.png" type="Texture" id=49]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Walking/WalkLoop/Shooting/005.png" type="Texture" id=50]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Walking/WalkLoop/Shooting/003.png" type="Texture" id=51]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Jump/Shooting/005.png" type="Texture" id=52]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Jump/Shooting/006.png" type="Texture" id=53]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Wall/WallCling/Shooting/002.png" type="Texture" id=54]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Wall/WallKick/Shooting/002.png" type="Texture" id=55]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Wall/WallKick/Shooting/001.png" type="Texture" id=56]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Wall/WallCling/Shooting/001.png" type="Texture" id=57]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Wall/WallKick/Shooting/003.png" type="Texture" id=58]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Dash/DashLoop/Shooting/001.png" type="Texture" id=59]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Dash/DashStart/Shooting/001.png" type="Texture" id=60]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Idle/002.png" type="Texture" id=61]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Dash/DashLoop/003.png" type="Texture" id=62]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Idle/007.png" type="Texture" id=63]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Idle/006.png" type="Texture" id=64]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Idle/004.png" type="Texture" id=65]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Idle/005.png" type="Texture" id=66]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Dash/DashStart/002.png" type="Texture" id=67]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Dash/DashStart/001.png" type="Texture" id=68]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Dash/DashStart/Shooting/002.png" type="Texture" id=69]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Dash/DashLoop/Shooting/003.png" type="Texture" id=70]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Dash/DashLoop/Shooting/002.png" type="Texture" id=71]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Walking/WalkLoop/013.png" type="Texture" id=72]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Walking/WalkLoop/014.png" type="Texture" id=73]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Walking/WalkLoop/006.png" type="Texture" id=74]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Land/002.png" type="Texture" id=75]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Jump/005.png" type="Texture" id=76]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Jump/003.png" type="Texture" id=77]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Jump/002.png" type="Texture" id=78]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Jump/001.png" type="Texture" id=79]
+[ext_resource path="res://addons/rect-extent/rect-manipulate-2d.gd" type="Script" id=80]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Idle/Shooting/003.png" type="Texture" id=81]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Idle/Shooting/002.png" type="Texture" id=82]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Idle/Shooting/004.png" type="Texture" id=83]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Wall/WallCling/Shooting/003.png" type="Texture" id=84]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Walking/WalkLoop/Shooting/006.png" type="Texture" id=85]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Walking/WalkLoop/Shooting/011.png" type="Texture" id=86]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Walking/WalkLoop/Shooting/004.png" type="Texture" id=87]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Walking/WalkLoop/Shooting/002.png" type="Texture" id=88]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Jump/Shooting/008.png" type="Texture" id=89]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Dash/DashEnd/004.png" type="Texture" id=90]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Dash/DashEnd/003.png" type="Texture" id=91]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Dash/DashEnd/002.png" type="Texture" id=92]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Dash/DashEnd/001.png" type="Texture" id=93]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Dash/DashEnd/Shooting/004.png" type="Texture" id=94]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Dash/DashEnd/Shooting/002.png" type="Texture" id=95]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Dash/DashEnd/Shooting/001.png" type="Texture" id=96]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Dash/DashEnd/Shooting/003.png" type="Texture" id=97]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Ladder/LadderClimbing/003.png" type="Texture" id=98]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Ladder/LadderClimbing/004.png" type="Texture" id=99]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Ladder/LadderClimbing/005.png" type="Texture" id=100]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Ladder/LadderClimbing/007.png" type="Texture" id=101]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Ladder/LadderClimbing/002.png" type="Texture" id=102]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Ladder/LadderClimbing/006.png" type="Texture" id=103]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Ladder/LadderClimbing/001.png" type="Texture" id=104]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Ladder/LadderShoot/001.png" type="Texture" id=105]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Ladder/LadderClimbing/008.png" type="Texture" id=106]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Ladder/LadderClimbing/009.png" type="Texture" id=107]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Ladder/LadderTop/001.png" type="Texture" id=108]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Ladder/LadderShoot/002.png" type="Texture" id=109]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Ladder/LadderTop/002.png" type="Texture" id=110]
+[ext_resource path="res://assets/sprites/Characters/X-64bits/Ladder/LadderTop/003.png" type="Texture" id=111]
+
+[sub_resource type="GDScript" id=1]
+resource_local_to_scene = true
+resource_name = "OnAir"
+script/source = "extends State
+
+var speed_pattern:Vector2
+var dash_speed:float
+var dashed:bool
+var jump_from_wall: = false
+var control_lock := false
+var lock_normal : float = 0.15
+var lock_timer := lock_normal
+var dash_ground
+var dash_ground_normal = 0.3
+var dash_ground_timer = dash_ground_normal
+var prev_state_s : String
+
+func enter(host:PlayerPhysics, prev_state:String):
+	.enter(host, prev_state)
+	jump_from_wall = host.jump_from_wall
+	host.jump_from_wall = false
+	prev_state_s = prev_state
+	if jump_from_wall:
+		control_lock = true
+	dashed = host.dashing
+	
+	host.sel_char.get_node(\"States\")
+
+func step(host:PlayerPhysics, delta:float):
+	.step(host, delta)
+	speed_pattern = host.sel_char.speed_pattern
+	dash_speed = host.sel_char.dash_speed
+	
+	if control_lock && lock_timer > 0:
+		lock_timer -= delta
+	if lock_timer <= 0:
+		control_lock = false
+		lock_timer = lock_normal
+	
+	#print(control_lock)
+	if Input.is_action_just_released(\"ui_jump\"):
+		if host.speed.y < 0:
+			host.speed.y = -speed_pattern.y/2
+	host.chars.scale.x = host.direction.x if host.direction.x != 0 else host.chars.scale.x
+	var speeds = [
+		speed_pattern.x,\\
+		dash_speed
+	]
+	if !control_lock:
+		#print(\"not_lock\")
+		host.speed.x = speeds[int(dashed)] * host.direction.x
+	host.speed.y += host.sel_char.speed_pattern.y
+	
+	if dash_ground && dash_ground_timer > 0.0:
+		dash_ground_timer -= delta
+	else:
+		dash_ground = false
+		dash_ground_timer = dash_ground_normal
+	
+	if Input.is_action_just_pressed(\"ui_dash\"):
+		dash_ground = true
+	elif !Input.is_action_pressed(\"ui_dash\"):
+		dash_ground = false
+	
+	var direction_just_pressed = -int(Input.is_action_just_pressed('ui_up')) + int(Input.is_action_just_pressed('ui_down'))
+	if host.current_ladder != null:
+		if prev_state_s != \"StairClimb\":
+			if direction_just_pressed < 0:
+				return \"StairClimb\"
+		else:
+			if host.direction.y < 0:
+				return \"StairClimb\"
+	
+	if host.grounded:
+		host.dash_grnd_air = dash_ground
+		dash_ground = false
+		dash_ground_timer = dash_ground_normal
+		return 'OnGround'
+	
+	var wall = host.get_which_wall_collided().direc
+	
+	if host.is_on_wall() && wall != 0 && host.direction.x == wall && host.speed.y >= 0:
+		return 'WallClimb'
+
+func exit(host:PlayerPhysics, next_state:String):
+	.exit(host, next_state)
+	pass
+"
+
+[sub_resource type="GDScript" id=2]
+resource_local_to_scene = true
+resource_name = "OnGround"
+script/source = "extends State
+
+var dash_speed = 0
+var speed_pattern:Vector2
+const dash_normal := 0.6
+var dash_timer := dash_normal
+var dash_press:bool
+var shoot_normal:float = 0.5
+var shoot_timer: float = shoot_normal
+var ground_speed:float = 0.0
+var post_dash : bool = false
+var prev_state_s: String
+
+func enter(host:PlayerPhysics, prev_state:String):
+	.enter(host, prev_state)
+	prev_state_s = prev_state
+	if host.dash_grnd_air:
+		dash_timer = dash_normal
+		if host.speed.x != 0:
+			dash_speed = host.sel_char.dash_speed * 0.25
+	host.snap_margin = 32
+
+func step(host:PlayerPhysics, delta:float):
+	.step(host, delta)
+	speed_pattern = host.sel_char.speed_pattern
+	dash_press = Input.is_action_pressed(\"ui_dash\")
+	var char_ds = host.sel_char.dash_speed
+	var side = host.get_which_wall_collided().direc
+	
+	if !dash_press:
+		if host.chars.scale.x == side && side != 0:
+			host.dashing = false
+			dash_timer = 0
+			dash_speed = 0
+		else:
+			if host.direction.x == 0:
+				if dash_timer >= 0 && dash_speed > 0:
+					dash_speed -= char_ds / 8
+					post_dash = true
+				elif dash_speed <= 0:
+					dash_speed = 0
+					post_dash = false
+			else:
+				post_dash = false
+				dash_speed = 0
+			dash_timer = dash_normal
+	
+	if dash_press && dash_timer > 0:
+		var can_dash:bool = true
+		#print(side, host.chars.scale.x)
+		if host.chars.scale.x == side && side != 0:
+			can_dash = false
+			host.dashing = false
+		else:
+			if dash_speed < char_ds:
+				dash_speed += (char_ds + dash_speed)/15
+			var dash_final = clamp(dash_speed, 0, char_ds);
+			if can_dash:
+				var char_scale = host.chars.scale.x
+				host.dashing = true
+				ground_speed = dash_final * char_scale
+				dash_timer -= delta
+			else:
+				dash_timer = 0
+		
+	else:
+		host.dashing = false
+		host.chars.scale.x = host.direction.x if host.direction.x != 0 else host.chars.scale.x
+		if host.direction.x != side || side == 0:
+			if dash_speed > 0:
+				post_dash = true
+				dash_speed -= char_ds / 8
+			else:
+				dash_speed = 0
+				post_dash = false
+				ground_speed = speed_pattern.x * host.direction.x
+	
+	#rint(host.speed)
+	if prev_state_s != \"StairClimb\" || (prev_state_s == \"StairClimb\" && !host.current_ladder_top):
+		var floor_normal:Vector2 = host.get_floor_normal()
+		host.speed.x = -sin(floor_normal.angle()) * ground_speed
+		host.speed.y = cos(floor_normal.angle()) * ground_speed
+		#print(\"%s %s\" % [String(floor_normal), String(host.speed)])
+		var direction_just_pressed = -int(Input.is_action_just_pressed('ui_up')) + int(Input.is_action_just_pressed('ui_down'))
+		
+		if host.current_ladder_top:
+			if direction_just_pressed > 0:
+				host.current_ladder = host.current_ladder_top
+				host.current_ladder.collision_disabled = true
+				host.snap_margin = 0
+				return \"StairClimb\"
+			
+		if direction_just_pressed < 0 && host.current_ladder:
+			host.snap_margin = 0
+			return \"StairClimb\"
+		
+		if Input.is_action_just_pressed(\"ui_jump\"):
+			if dash_press:
+				host.dashing = true
+			host.speed.y = -host.jump_speed
+			host.jumping = true
+			dash_timer = 0
+			host.snap_margin = 0
+			return \"OnAir\"
+		if !host.grounded:
+			host.snap_margin = 0
+			host.speed.y = 0
+			#host.speed.y = 0
+			return \"OnAir\"
+	else:
+		host.speed.x = 0
+		host.speed.y = 0
+
+func exit(host:PlayerPhysics, next_state:String):
+	dash_speed = 0
+	.exit(host, next_state)
+"
+
+[sub_resource type="GDScript" id=3]
+resource_local_to_scene = true
+resource_name = "WallClimb"
+script/source = "extends State
+
+var speed_pattern:Vector2
+var dash_speed:float
+
+func enter(host:PlayerPhysics, prev_state:String):
+	host.dashing = false
+	host.speed.y = 0
+	
+
+func step(host:PlayerPhysics, delta:float):
+	.step(host, delta)
+	speed_pattern = host.sel_char.speed_pattern
+	dash_speed = host.sel_char.dash_speed
+	# Cai em velocidade crescente (com um alto limite)
+	if host.speed.y < 100:
+		host.speed.y += 5
+	
+	# Continua em direcao a parede para nao perder a colisao
+	host.speed.x = host.direction.x
+	
+	# Puxa que lado esta colidindo
+	var wall = host.get_which_wall_collided().direc
+	#print(wall)
+	
+	# Retorna estado \"OnAir\" se nao cumprir as condicoes para ficar na parede
+	if host.direction.x != wall || wall == 0:
+		return \"OnAir\"
+	
+	# Caso encoste no chao retorna o estado \"OnGround\"
+	if host.grounded:
+		return \"OnGround\"
+	
+	# Execucao de Pulo
+	if Input.is_action_just_pressed(\"ui_jump\") && host.direction.x == wall:
+		if Input.is_action_pressed(\"ui_dash\"):
+			host.speed.x = dash_speed * -host.direction.x
+			host.dashing = true
+			host.speed.y = -(host.jump_speed + 50)
+		else:
+			host.speed.x = speed_pattern.x * -host.direction.x
+			host.speed.y = -host.jump_speed
+		host.jumping = true
+		host.jump_from_wall = true
+		return \"OnAir\"
+
+func exit(host:PlayerPhysics, next_state:String):
+	.exit(host, next_state)
+	pass
+"
+
+[sub_resource type="GDScript" id=4]
+resource_name = "StairClimb"
+script/source = "extends State
+
+var top_ladder : bool
+var ascending : bool
+var descending : bool
+
+func enter(host:PlayerPhysics, prev_state:String):
+	.enter(host, prev_state)
+	host.position.x = host.current_ladder.position.x
+	host.current_ladder.collision_disabled = true
+	host.dashing = false
+	top_ladder = true if host.current_ladder_top else false
+	if top_ladder && host.direction.y > 0:
+		descending = true
+
+func step(host:PlayerPhysics, delta:float):
+	.step(host, delta)
+	if host.current_ladder_top && !top_ladder:
+		ascending = true
+	if ascending:
+		host.position.y -= 330 * delta
+		return \"OnGround\"
+		return
+	if top_ladder:
+		top_ladder = true if host.current_ladder_top else false
+		host.speed.y = 110
+		return
+	host.position.x = host.current_ladder.position.x
+	if host.attacking:
+		host.speed.y = 0
+	else:
+		host.speed.y = 110 * host.direction.y
+	host.speed.x = 0
+	
+	if host.direction.y != 0:
+		if Input.is_action_just_pressed('ui_jump'):
+			if host.direction.y < 0:
+				host.speed.y = -host.jump_speed
+			return 'OnAir'
+	
+	if host.grounded && host.direction.y > 0:
+		return 'OnGround'
+
+func exit(host:PlayerPhysics, next_state:String):
+	.exit(host, next_state)
+	ascending = false
+	descending = false
+"
+
+[sub_resource type="Shader" id=5]
+code = "shader_type canvas_item;
+
+void fragment(){
+	vec4 main = texture(TEXTURE, UV);
+	COLOR.rgb *= main.rgb + vec3(1, 1, 1);
+	COLOR.a = (COLOR.a * main.a) / 8.0;
+}"
+
+[sub_resource type="ShaderMaterial" id=6]
+shader = SubResource( 5 )
+
+[sub_resource type="Gradient" id=7]
+offsets = PoolRealArray( 0, 0.75, 1 )
+colors = PoolColorArray( 0, 0.25098, 1, 0, 0, 0.552941, 1, 0.419608, 0, 1, 1, 0.439216 )
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ ExtResource( 104 ), ExtResource( 102 ), ExtResource( 98 ), ExtResource( 99 ), ExtResource( 100 ), ExtResource( 103 ), ExtResource( 101 ), ExtResource( 106 ), ExtResource( 107 ), ExtResource( 105 ), ExtResource( 109 ), ExtResource( 108 ), ExtResource( 110 ), ExtResource( 111 ) ],
+"loop": true,
+"name": "Ladder",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 61 ), ExtResource( 65 ), ExtResource( 66 ), ExtResource( 64 ), ExtResource( 63 ), ExtResource( 1 ), ExtResource( 16 ), ExtResource( 3 ) ],
+"loop": false,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 30 ) ],
+"loop": true,
+"name": "WallStand",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 60 ), ExtResource( 69 ), ExtResource( 59 ), ExtResource( 71 ), ExtResource( 70 ), ExtResource( 96 ), ExtResource( 95 ), ExtResource( 97 ), ExtResource( 94 ) ],
+"loop": true,
+"name": "DashShoot",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 57 ), ExtResource( 54 ), ExtResource( 84 ), ExtResource( 56 ), ExtResource( 55 ), ExtResource( 58 ) ],
+"loop": true,
+"name": "ShootWall",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 18 ) ],
+"loop": false,
+"name": "Air",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 8 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 22 ), ExtResource( 74 ), ExtResource( 9 ), ExtResource( 25 ), ExtResource( 6 ), ExtResource( 23 ), ExtResource( 7 ), ExtResource( 24 ), ExtResource( 72 ), ExtResource( 73 ) ],
+"loop": false,
+"name": "Running",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 34 ), ExtResource( 33 ) ],
+"loop": true,
+"name": "WallSnap",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 20 ), ExtResource( 75 ), ExtResource( 19 ) ],
+"loop": false,
+"name": "FallGround",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 47 ), ExtResource( 45 ), ExtResource( 48 ), ExtResource( 46 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 43 ), ExtResource( 89 ) ],
+"loop": true,
+"name": "ShootJump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 68 ), ExtResource( 67 ), ExtResource( 28 ), ExtResource( 27 ), ExtResource( 62 ), ExtResource( 93 ), ExtResource( 92 ), ExtResource( 91 ), ExtResource( 90 ) ],
+"loop": false,
+"name": "Dash",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 33 ), ExtResource( 34 ), ExtResource( 21 ), ExtResource( 32 ), ExtResource( 31 ) ],
+"loop": true,
+"name": "WallJump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 36 ), ExtResource( 88 ), ExtResource( 51 ), ExtResource( 87 ), ExtResource( 50 ), ExtResource( 85 ), ExtResource( 38 ), ExtResource( 49 ), ExtResource( 41 ), ExtResource( 39 ), ExtResource( 86 ), ExtResource( 35 ), ExtResource( 37 ), ExtResource( 42 ) ],
+"loop": true,
+"name": "ShootRun",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 79 ), ExtResource( 78 ), ExtResource( 77 ), ExtResource( 17 ), ExtResource( 76 ), ExtResource( 14 ), ExtResource( 12 ) ],
+"loop": false,
+"name": "Jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 44 ), ExtResource( 82 ), ExtResource( 81 ), ExtResource( 83 ), ExtResource( 40 ) ],
+"loop": true,
+"name": "ShootIdle",
+"speed": 5.0
+} ]
+
+[sub_resource type="Gradient" id=9]
+offsets = PoolRealArray( 0.245033, 0.741722 )
+colors = PoolColorArray( 0, 0.286275, 1, 1, 0, 0.423529, 1, 0 )
+
+[sub_resource type="Animation" id=10]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.001 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ "Air", "Air" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.001 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.001 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -2, 1 ), Vector2( -2, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ShootSpawner:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.001 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 18, -8 ), Vector2( 18, -8 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.001 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ "ShootJump", "ShootJump" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.001 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 7, 7 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.001 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 3, 1 ), Vector2( 3, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ShootSpawner:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.001 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 20, -12 ), Vector2( 20, -12 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "DashEnd"
+length = 0.4
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ "Dash", "Dash", "Dash" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 0
+tracks/1/loop_wrap = false
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.25, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 5, 6, 7, 8, 8 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:offset")
+tracks/2/interp = 0
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.25, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2, 1 ), Vector2( -3, 2 ), Vector2( 0, 1 ), Vector2( 3, 1 ), Vector2( 3, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ShootSpawner:position")
+tracks/3/interp = 0
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.25, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 29, -7 ), Vector2( 25, -7 ), Vector2( 22, -6 ), Vector2( 32, -6 ), Vector2( 32, -6 ) ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "DashEndShoot"
+length = 0.4
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ "DashShoot", "DashShoot", "DashShoot" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 0
+tracks/1/loop_wrap = false
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.25, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 5, 6, 7, 8, 8 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:offset")
+tracks/2/interp = 0
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.25, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 7, 1 ), Vector2( 4, 2 ), Vector2( 2, 1 ), Vector2( 10, 1 ), Vector2( 10, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ShootSpawner:position")
+tracks/3/interp = 0
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.25, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 29, -7 ), Vector2( 25, -7 ), Vector2( 22, -6 ), Vector2( 32, -6 ), Vector2( 32, -6 ) ]
+}
+
+[sub_resource type="Animation" id=14]
+length = 0.2
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ "Dash", "Dash" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.15 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 3, 4, 4 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:offset")
+tracks/2/interp = 0
+tracks/2/loop_wrap = false
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 6 ), Vector2( 0, 6 ), Vector2( -2, 6 ), Vector2( -2, 6 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ShootSpawner:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 34, 4 ), Vector2( 34, 4 ) ]
+}
+
+[sub_resource type="Animation" id=15]
+length = 0.2
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ "DashShoot", "DashShoot" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.15 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 3, 4, 4 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:offset")
+tracks/2/interp = 0
+tracks/2/loop_wrap = false
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 5, 7 ), Vector2( 5, 7 ), Vector2( 3, 6 ), Vector2( 3, 6 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ShootSpawner:position")
+tracks/3/interp = 0
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 34, 4 ), Vector2( 34, 4 ) ]
+}
+
+[sub_resource type="Animation" id=16]
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ "Dash", "Dash" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 0
+tracks/1/loop_wrap = false
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0, 1, 2 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:offset")
+tracks/2/interp = 0
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.25 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 1 ), Vector2( 0, 4 ), Vector2( 0, 6 ), Vector2( 0, 6 ) ]
+}
+
+[sub_resource type="Animation" id=17]
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ "DashShoot", "DashShoot" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 0
+tracks/1/loop_wrap = false
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0, 1, 2 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:offset")
+tracks/2/interp = 0
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.25 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 5, 1 ), Vector2( 5, 4 ), Vector2( 5, 6 ), Vector2( 5, 6 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ShootSpawner:position")
+tracks/3/interp = 0
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.25 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 26, -6 ), Vector2( 31, 0 ), Vector2( 34, 4 ), Vector2( 34, 4 ) ]
+}
+
+[sub_resource type="Animation" id=18]
+length = 1.3
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.7, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 2, 0, 1 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ "Idle", "Idle" ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ShootSpawner:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 22, -9 ), Vector2( 22, -9 ) ]
+}
+
+[sub_resource type="Animation" id=19]
+length = 1.3
+step = 0.025
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.7, 1, 1.075, 1.15 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 2, 0, 4, 5, 6 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.85 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ "Idle", "Idle" ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ShootSpawner:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.85 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 12, -1 ), Vector2( 12, -1 ) ]
+}
+
+[sub_resource type="Animation" id=20]
+length = 0.625
+step = 0.025
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.125, 0.25, 0.375, 0.5, 0.625 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0, 1, 3, 4, 5, 6 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.625 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ "Jump", "Jump" ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:offset")
+tracks/2/interp = 0
+tracks/2/loop_wrap = false
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.025, 0.125, 0.25, 0.5, 0.625 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2, 0 ), Vector2( 1, 0 ), Vector2( -3, 0 ), Vector2( -2, 0 ), Vector2( -1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ShootSpawner:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.625 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 14, -2 ), Vector2( 14, -2 ) ]
+}
+
+[sub_resource type="Animation" id=21]
+length = 0.63
+step = 0.025
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.625 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ "ShootJump", "ShootJump" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 2
+tracks/1/loop_wrap = false
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.13, 0.25, 0.375, 0.5, 0.625 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0, 1, 2, 3, 5, 6 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:offset")
+tracks/2/interp = 0
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.125, 0.25, 0.375, 0.5, 0.625 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 7, 0 ), Vector2( 7, 0 ), Vector2( 5, 0 ), Vector2( 3, 0 ), Vector2( 2, 0 ), Vector2( 2, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ShootSpawner:position")
+tracks/3/interp = 0
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.725 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 19, -11 ), Vector2( 19, -11 ), Vector2( 18, -11 ), Vector2( 18, -11 ), Vector2( 20, -11 ), Vector2( 20, -11 ), Vector2( 20, -11 ) ]
+}
+
+[sub_resource type="Animation" id=22]
+resource_name = "LadderClimb"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ "Ladder", "Ladder" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 0
+tracks/1/loop_wrap = false
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 1, 2, 3, 4, 5, 6, 7, 8 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:offset")
+tracks/2/interp = 0
+tracks/2/loop_wrap = false
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -2, 1 ), Vector2( -5, -1 ), Vector2( -1, -1 ), Vector2( 1, 0 ), Vector2( 3, 1 ), Vector2( 5, -1 ), Vector2( 2, -1 ) ]
+}
+
+[sub_resource type="Animation" id=23]
+resource_name = "LadderShoot"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ "Ladder", "Ladder" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 9, 0 ), Vector2( 8, 0 ), Vector2( 8, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 9, 10, 10 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ShootSpawner:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 25, -10 ), Vector2( 25, -10 ) ]
+}
+
+[sub_resource type="Animation" id=24]
+resource_name = "LadderSnap"
+length = 0.075
+step = 0.025
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.075 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "Ladder", "Ladder" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.075 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.075 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 4, 0 ), Vector2( 4, 0 ) ]
+}
+
+[sub_resource type="Animation" id=25]
+resource_name = "LadderTop"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ "Ladder", "Ladder" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 11, 12, 13 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:offset")
+tracks/2/interp = 0
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 2 ) ]
+}
+
+[sub_resource type="Animation" id=26]
+length = 0.1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ "FallGround", "FallGround" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0, 1, 2 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:offset")
+tracks/2/interp = 0
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 2 ), Vector2( 0, 3 ) ]
+}
+
+[sub_resource type="Animation" id=27]
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Running" ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=28]
+length = 1.025
+loop = true
+step = 0.025
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.975 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ "Running", "Running" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 2
+tracks/1/loop_wrap = false
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.975 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 13 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:offset")
+tracks/2/interp = 0
+tracks/2/loop_wrap = false
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.075, 0.15, 0.225, 0.3, 0.375, 0.45, 0.525, 0.6, 0.675, 0.75, 0.825, 0.9, 0.975 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -2, 0 ), Vector2( -3, 0 ), Vector2( -3, -1 ), Vector2( -2, -1 ), Vector2( -2, -1 ), Vector2( 0, -1 ), Vector2( 1, -1 ), Vector2( -1, -1 ), Vector2( -1, -1 ), Vector2( -3, -1 ), Vector2( -2, -1 ), Vector2( -2, -2 ), Vector2( 0, -2 ), Vector2( 0, -2 ) ]
+}
+
+[sub_resource type="Animation" id=29]
+length = 1.025
+loop = true
+step = 0.025
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.975 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ "ShootRun", "ShootRun" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 2
+tracks/1/loop_wrap = false
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.975 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 13 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:offset")
+tracks/2/interp = 0
+tracks/2/loop_wrap = false
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.075, 0.15, 0.225, 0.3, 0.4, 0.45, 0.525, 0.6, 0.675, 0.775, 0.85, 0.9, 0.975 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 4, 0 ), Vector2( 2, 0 ), Vector2( 0, -1 ), Vector2( 0, -1 ), Vector2( 3, 0 ), Vector2( 6, -1 ), Vector2( 8, -1 ), Vector2( 6, -1 ), Vector2( 4, -1 ), Vector2( 3, -1 ), Vector2( 4, -1 ), Vector2( 5, -2 ), Vector2( 7, -1 ), Vector2( 8, -2 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ShootSpawner:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1.025 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 25, -11 ), Vector2( 25, -11 ) ]
+}
+
+[sub_resource type="Animation" id=30]
+length = 0.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ "ShootIdle", "ShootIdle" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0, 1, 3, 4 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:offset")
+tracks/2/interp = 0
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 3, 1 ), Vector2( 2, 1 ), Vector2( 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ShootSpawner:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 22, -9 ), Vector2( 22, -9 ) ]
+}
+
+[sub_resource type="Animation" id=31]
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ "WallJump", "Jump", "WallJump", "WallJump" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 2, 4, 5, 6, 3 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:offset")
+tracks/2/interp = 0
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 1 ), Vector2( -1, 3 ), Vector2( -1, 1 ), Vector2( -1, 1 ), Vector2( 0, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ShootSpawner:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 18, -8 ), Vector2( 18, -8 ) ]
+}
+
+[sub_resource type="Animation" id=32]
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ "ShootWall", "ShootWall", "ShootJump", "ShootWall", "ShootWall" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 3, 5, 6, 7, 4 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 3, 1 ), Vector2( 4, 3 ), Vector2( 3, 3 ), Vector2( 4, 4 ), Vector2( 5, 3 ), Vector2( 5, 3 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ShootSpawner:position")
+tracks/3/interp = 0
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 15, -7 ), Vector2( 15, -6 ), Vector2( 15, -6 ), Vector2( 15, -6 ) ]
+}
+
+[sub_resource type="Animation" id=33]
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ "WallSnap", "WallSnap" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0, 1, 1 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:offset")
+tracks/2/interp = 0
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -4, 1 ), Vector2( -4, -2 ), Vector2( -4, -2 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ShootSpawner:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -10, 1 ), Vector2( -10, 1 ) ]
+}
+
+[sub_resource type="Animation" id=34]
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ "ShootWall", "ShootWall" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0, 1, 1 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:offset")
+tracks/2/interp = 0
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -9, 1 ), Vector2( -9, -2 ), Vector2( -9, -2 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ShootSpawner:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -17, -1 ), Vector2( -17, -1 ) ]
+}
+
+[sub_resource type="Animation" id=35]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.001 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ "WallStand", "WallStand" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.001 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.001 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -4, -2 ), Vector2( -4, -2 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ShootSpawner:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.001 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -27, -7 ), Vector2( -27, -7 ) ]
+}
+
+[sub_resource type="Animation" id=36]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.001 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ "ShootWall", "ShootWall" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.001 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 2, 2 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.001 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -9, -2 ), Vector2( -9, -2 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ShootSpawner:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.001 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -27, -7 ), Vector2( -27, -7 ) ]
+}
+
+[sub_resource type="GDScript" id=37]
+resource_name = "XAnimStates"
+script/source = "extends Node
+
+
+onready var states:Dictionary;
+
+func _ready():
+	# Adiciona todos os estados disponveis baseados nos nos de forma dinamica
+	var children = get_children()
+	for i in children:
+		states[i.name] = i
+"
+
+[sub_resource type="GDScript" id=38]
+resource_name = "XOnAir"
+script/source = "extends AnimState
+
+var main_anim_name = \"Idle\"
+var prev_main_anim = null
+var anim_speed=1.6
+var current_frame : float
+
+func enter(host:PlayerPhysics, main_state, prev_state:String):
+	.enter(host, main_state, prev_state)
+	var shoot: int = int(host.attacking)
+	if host.jumping:
+		main_anim_name = \"Jumping\" + [\"\", \"Shoot\"][shoot]
+	else:
+		main_anim_name = \"AirStand\" + [\"\", \"Shoot\"][shoot]
+
+func animation_step(host, main_state, delta):
+	.animation_step(host, main_state, delta)
+	var shoot = int(host.attacking)
+	#print(\"pre: %s\" % main_anim_name)
+	var impl_name = [\"\", \"Shoot\"]
+	if (main_state.jump_from_wall && main_state.control_lock) && (main_anim_name != \"AirStand\" || main_anim_name != \"AirStandShoot\"):
+		main_anim_name = \"WallJump\" + impl_name[shoot]
+	elif !main_state.jump_from_wall:
+		if host.jumping && (main_anim_name != \"AirStand\" && main_anim_name != \"AirStandShoot\"):
+			main_anim_name = \"Jumping\" + impl_name[shoot]
+	
+	if main_anim_name == \"AirStand\" || main_anim_name == \"AirStandShoot\":
+		main_anim_name = \"AirStand\" + impl_name[shoot]
+	
+	if prev_main_anim != main_anim_name:
+		prev_main_anim = main_anim_name
+	
+	#current_frame = host.char_props.animator.current_animation_position
+	#print(current_frame)
+	#print(\"post: %s\" % main_anim_name)
+	if host.char_props.animator.has_animation(main_anim_name):
+		host.char_props.animator.animate(main_anim_name, anim_speed, true)
+
+func on_Animator_animation_finished(anim_name, main_state, host):
+	.on_Animator_animation_finished(anim_name, main_state, host)
+	var shoot = int(host.attacking)
+	match anim_name:
+		\"Jumping\":
+			main_anim_name = \"AirStand\" + [\"\", \"Shoot\"][shoot]
+		\"WallJump\":
+			main_anim_name = \"AirStand\" + [\"\", \"Shoot\"][shoot]
+		\"JumpingShoot\":
+			main_anim_name = \"AirStand\" + [\"\", \"Shoot\"][shoot]
+		\"WallJumpShoot\":
+			main_anim_name = \"AirStand\" + [\"\", \"Shoot\"][shoot]
+
+func on_Animator_animation_changed(prev_name:String, next_name:String, current_time:float, host:PlayerPhysics, main_state:State):
+	if (\"Shoot\" in next_name && prev_name in next_name) ||\\
+		(\"Shoot\" in prev_name && next_name in prev_name):
+			host.char_props.animator.seek(current_time)
+"
+
+[sub_resource type="GDScript" id=39]
+resource_name = "XOnGround"
+script/source = "extends AnimState
+
+var main_anim_name: = \"Idle\"
+var prev_main_anim
+var current_frame: float
+var anim_speed = 1.6
+var played_idle := 1
+var can_loop = true
+
+func enter(host:PlayerPhysics, main_state, prev_state:String):
+	.enter(host, main_state, prev_state)
+	if prev_state == \"OnAir\":
+		main_anim_name = \"Landing\"
+
+func animation_step(host, main_state, delta):
+	.animation_step(host, main_state, delta)
+	played_idle = played_idle * int (main_anim_name == \"Idle\")
+	var shoot:int = int(host.attacking)
+	var side_coll = host.get_which_wall_collided().direc
+	if main_anim_name != prev_main_anim: print(main_anim_name)
+	if ! host.dashing:
+		if host.direction.x == 0:
+			if main_anim_name != \"Landing\":
+				if host.attacking:
+					main_anim_name = \"StopShoot\"
+					if host.sel_char.shoot_timer == host.sel_char.shoot_normal:
+						host.char_props.animator.seek(0.0)
+				else:
+					if main_anim_name != \"IdleBlink\":
+						main_anim_name = \"Idle\"
+		else:
+			if host.direction.x != side_coll || side_coll == 0:
+				if main_anim_name != \"DashEnd\" && main_anim_name != \"DashEndShoot\":
+					if (main_anim_name == \"Running\" || main_anim_name == \"RunningShoot\"):
+						main_anim_name = \"Running\" + [\"\", \"Shoot\"][shoot]
+					else:
+						main_anim_name = \"Pre-run\"
+			else:
+				main_anim_name = \"Idle\"
+		if host.direction.x != side_coll || side_coll == 0:
+			if main_state.post_dash:
+				main_anim_name = \"DashEnd\" + [\"\", \"Shoot\"][shoot]
+	else:
+		if main_anim_name != \"DashLoop\" && main_anim_name != \"DashLoopShoot\":
+			main_anim_name = \"DashStart\" + [\"\", \"Shoot\"][shoot]
+		else:
+			main_anim_name = \"DashLoop\" + [\"\", \"Shoot\"][shoot]
+		
+	if prev_main_anim != main_anim_name:
+		prev_main_anim = main_anim_name
+	
+	current_frame = host.char_props.animator.current_animation_position
+	
+	if host.char_props.animator.has_animation(main_anim_name):
+		host.char_props.animator.animate(main_anim_name, anim_speed, can_loop)
+	
+	can_loop = true
+
+func exit(host:PlayerPhysics, main_state:State, next_state:String):
+	current_frame = 0.0
+
+func on_Animator_animation_finished(anim_name, main_state, host):
+	.on_Animator_animation_finished(anim_name, main_state, host)
+	var shoot:int = int(host.attacking)
+	match anim_name:
+		\"Pre-run\":
+			main_anim_name = \"Running\" + [\"\", \"Shoot\"][shoot]
+		\"Landing\":
+			main_anim_name = \"Idle\"
+		\"Idle\":
+			main_anim_name = \"Idle\"
+			can_loop = false
+			played_idle += 1
+			played_idle = played_idle % 5
+			if played_idle == 0:
+				main_anim_name += \"Blink\"
+		\"IdleBlink\":
+			main_anim_name = \"Idle\"
+			played_idle = 1
+		\"DashStart\":
+			if host.dashing:
+				main_anim_name = \"DashLoop\" + [\"\", \"Shoot\"][shoot]
+			#print(main_anim_name)
+		\"DashStartShoot\":
+			if host.dashing:
+				main_anim_name = \"DashLoop\" + [\"\", \"Shoot\"][shoot]
+		\"DashEnd\":
+			main_anim_name = [\"Idle\", \"StopShoot\"][shoot]
+		\"DashEndShoot\":
+			main_anim_name = [\"Idle\", \"StopShoot\"][shoot]
+
+func on_Animator_animation_changed(prev_name:String, next_name:String, current_time:float, host:PlayerPhysics, main_state:State):
+	if (\"Shoot\" in next_name && prev_name in next_name) ||\\
+		(\"Shoot\" in prev_name && next_name in prev_name):
+			host.char_props.animator.seek(current_time)
+"
+
+[sub_resource type="GDScript" id=40]
+resource_name = "XWallClimb"
+script/source = "extends AnimState
+
+var main_anim_name = \"WallSnap\"
+
+func enter(host, main_state, prev_state) -> void:
+	var shoot : int = int(host.attacking)
+	main_anim_name = \"WallSnap\" + [\"\", \"Shoot\"][shoot]
+
+func animation_step(host, main_state, delta):
+	.animation_step(host, main_state, delta)
+	var anim_speed:float = 4.0
+	var impl_name = [\"\", \"Shoot\"]
+	var shoot : int = int(host.attacking)
+	if main_anim_name == \"WallStand\" || main_anim_name == \"WallStandShoot\":
+		anim_speed = 0.0
+		main_anim_name = \"WallStand\" + impl_name[shoot]
+	
+	if host.char_props.animator.current_animation != main_anim_name:
+		host.char_props.animator.animate(main_anim_name, anim_speed, true)
+
+func on_Animator_animation_finished(anim_name, main_state, host):
+	.on_Animator_animation_finished(anim_name, main_state, host)
+	match anim_name:
+		\"WallSnap\":
+			main_anim_name = \"WallStand\"
+		\"WallSnapShoot\":
+			main_anim_name = \"WallStandShoot\"
+"
+
+[sub_resource type="GDScript" id=41]
+resource_name = "XStairClimb"
+script/source = "extends AnimState
+
+var current_frame : float = 0.0
+var main_anim_name : String
+var prev_anim_name : String
+var side:int
+var shoot_side : int = 0
+var descending : bool
+var ascending : bool
+
+func enter(host, main_state, prev_state) -> void:
+	.enter(host, main_state, prev_state)
+	main_anim_name = \"LadderSnap\"
+	side = host.chars.scale.x
+	shoot_side = side
+
+func animation_step(host, main_state, delta):
+	.animation_step(host, main_state, delta)
+	var pre_shoot_side : int = Utils.int_tern(host.direction.x < 0, host.direction.x > 0)
+	shoot_side = shoot_side if pre_shoot_side == 0 else pre_shoot_side
+	if !host.current_ladder:
+		main_anim_name = \"LadderTop\"
+	else:
+		if main_anim_name != \"LadderShoot\" && main_anim_name != \"LadderTop\" && main_anim_name != \"LadderSnap\":
+			main_anim_name = \"LadderClimb\"
+			host.chars.scale.x = side
+		else:
+			side = shoot_side
+			host.chars.scale.x = side
+	prev_anim_name = main_anim_name
+	var animator : CharacterAnimator = host.char_props.animator
+	current_frame = animator.current_animation_position
+	if animator.has_animation(main_anim_name):
+		if main_anim_name == \"LadderClimb\":
+			if host.speed.y != 0:
+				animator.animate(main_anim_name, -1.0 * host.direction.y, false)
+			else:
+				if animator.current_animation == main_anim_name:
+					animator.stop(false)
+				else:
+					animator.animate(main_anim_name, -1.0 * host.direction.y, false)
+		else:
+			var speed : float = 1.0
+			var from_end:bool = false
+			if descending && main_anim_name == \"LadderTop\":
+				speed = -1.0
+				from_end = true
+			animator.animate(main_anim_name, speed, true, -1, from_end)
+
+func exit(host:PlayerPhysics, main_state:State, next_state:String) -> void:
+	.exit(host, main_state, next_state)
+
+func on_Animator_animation_finished(anim_name, main_state, host):
+	.on_Animator_animation_finished(anim_name, main_state, host)
+	match anim_name:
+		\"LadderShoot\":
+			main_anim_name = \"LadderClimb\"
+		\"LadderSnap\":
+			main_anim_name = \"LadderClimb\"
+		\"LadderTop\":
+			if !descending:
+				host.fsm.change_state(host, \"OnGround\")
+			else:
+				descending = false
+				main_state.top_ladder = false
+				main_anim_name = \"LadderClimb\"
+				host.position.y += 30
+"
+
+[sub_resource type="GDScript" id=42]
+script/source = "extends PlayerProps
+
+onready var main_props: Dictionary = {
+	sprite = $Sprite,
+	animator = $Sprite/Animator,
+	particle = $Sprite/DashParticles
+}
+onready var ladder_sensor : RayCast2D = $LadderSensor
+
+func input_proc(event, host:PlayerPhysics):
+	pass
+"
+
+[sub_resource type="SpriteFrames" id=43]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Player" type="KinematicBody2D"]
+rotation = -0.000851651
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FSM" type="Node" parent="."]
+script = ExtResource( 4 )
+
+[node name="OnAir" type="Node" parent="FSM"]
+script = SubResource( 1 )
+
+[node name="OnGround" type="Node" parent="FSM"]
+script = SubResource( 2 )
+
+[node name="WallClimb" type="Node" parent="FSM"]
+script = SubResource( 3 )
+
+[node name="StairClimb" type="Node" parent="FSM"]
+script = SubResource( 4 )
+
+[node name="DashTrail" type="Node2D" parent="."]
+modulate = Color( 12.5, 12.5, 12.5, 1 )
+show_behind_parent = true
+material = SubResource( 6 )
+script = ExtResource( 26 )
+by_scale = true
+life_time = 0.25
+copy_period = 0.1
+solid_color = true
+
+[node name="Characters" type="Node2D" parent="."]
+
+[node name="X" type="Node2D" parent="Characters"]
+script = ExtResource( 2 )
+gradient = SubResource( 7 )
+
+[node name="Sprite" type="AnimatedSprite" parent="Characters/X"]
+frames = SubResource( 8 )
+animation = "Ladder"
+frame = 11
+flip_h = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="DashParticles" type="CPUParticles2D" parent="Characters/X/Sprite"]
+visible = false
+emitting = false
+amount = 30
+lifetime = 0.25
+explosiveness = 0.1
+randomness = 1.0
+lifetime_randomness = 0.08
+local_coords = false
+emission_shape = 2
+emission_rect_extents = Vector2( 10, 16 )
+spread = 0.0
+gravity = Vector2( 0, 0 )
+linear_accel = 100.0
+scale_amount = 3.0
+color_ramp = SubResource( 9 )
+
+[node name="Animator" type="AnimationPlayer" parent="Characters/X/Sprite"]
+method_call_mode = 1
+anims/AirStand = SubResource( 10 )
+anims/AirStandShoot = SubResource( 11 )
+anims/DashEnd = SubResource( 12 )
+anims/DashEndShoot = SubResource( 13 )
+anims/DashLoop = SubResource( 14 )
+anims/DashLoopShoot = SubResource( 15 )
+anims/DashStart = SubResource( 16 )
+anims/DashStartShoot = SubResource( 17 )
+anims/Idle = SubResource( 18 )
+anims/IdleBlink = SubResource( 19 )
+anims/Jumping = SubResource( 20 )
+anims/JumpingShoot = SubResource( 21 )
+anims/LadderClimb = SubResource( 22 )
+anims/LadderShoot = SubResource( 23 )
+anims/LadderSnap = SubResource( 24 )
+anims/LadderTop = SubResource( 25 )
+anims/Landing = SubResource( 26 )
+anims/Pre-run = SubResource( 27 )
+anims/Running = SubResource( 28 )
+anims/RunningShoot = SubResource( 29 )
+anims/StopShoot = SubResource( 30 )
+anims/WallJump = SubResource( 31 )
+anims/WallJumpShoot = SubResource( 32 )
+anims/WallSnap = SubResource( 33 )
+anims/WallSnapShoot = SubResource( 34 )
+anims/WallStand = SubResource( 35 )
+anims/WallStandShoot = SubResource( 36 )
+script = ExtResource( 29 )
+
+[node name="ShootSpawner" type="Node2D" parent="Characters/X/Sprite"]
+position = Vector2( 18, -8 )
+
+[node name="AnimStates" type="Node" parent="Characters/X"]
+script = SubResource( 37 )
+
+[node name="OnAir" type="Node" parent="Characters/X/AnimStates"]
+script = SubResource( 38 )
+
+[node name="OnGround" type="Node" parent="Characters/X/AnimStates"]
+script = SubResource( 39 )
+
+[node name="WallClimb" type="Node" parent="Characters/X/AnimStates"]
+script = SubResource( 40 )
+
+[node name="StairClimb" type="Node" parent="Characters/X/AnimStates"]
+script = SubResource( 41 )
+
+[node name="Abilities" type="Node" parent="Characters/X"]
+
+[node name="StandBox" type="Node2D" parent="Characters/X"]
+script = ExtResource( 80 )
+fill = true
+size = Vector2( 20, 44 )
+color = Color( 0.17, 0.87, 0.81, 0.5 )
+
+[node name="DashBox" type="Node2D" parent="Characters/X"]
+position = Vector2( 0.000851651, 9 )
+script = ExtResource( 80 )
+fill = true
+size = Vector2( 20, 26 )
+color = Color( 0.13, 0.14, 0.8, 0.5 )
+
+[node name="Zero" type="Node2D" parent="Characters"]
+script = SubResource( 42 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Characters/Zero"]
+frames = SubResource( 43 )
+offset = Vector2( -2, 1 )
+
+[node name="DashParticles" type="CPUParticles2D" parent="Characters/Zero/Sprite"]
+visible = false
+emitting = false
+amount = 30
+lifetime = 0.25
+explosiveness = 0.1
+randomness = 1.0
+lifetime_randomness = 0.08
+local_coords = false
+emission_shape = 2
+emission_rect_extents = Vector2( 10, 16 )
+spread = 0.0
+gravity = Vector2( 0, 0 )
+linear_accel = 100.0
+scale_amount = 3.0
+color_ramp = SubResource( 9 )
+
+[node name="Animator" type="AnimationPlayer" parent="Characters/Zero/Sprite"]
+script = ExtResource( 29 )
+
+[node name="AnimStates" type="Node" parent="Characters/Zero"]
+script = SubResource( 37 )
+
+[node name="OnAir" type="Node" parent="Characters/Zero/AnimStates"]
+script = SubResource( 38 )
+
+[node name="OnGround" type="Node" parent="Characters/Zero/AnimStates"]
+script = SubResource( 39 )
+
+[node name="WallClimb" type="Node" parent="Characters/Zero/AnimStates"]
+script = SubResource( 40 )
+
+[node name="Abilities" type="Node" parent="Characters/Zero"]
+
+[node name="StandColl" type="CollisionShape2D" parent="."]
+visible = false
+modulate = Color( 0, 0.976471, 1, 0.32549 )
+
+[node name="DashColl" type="CollisionShape2D" parent="."]
+visible = false
+modulate = Color( 0.0431373, 0.254902, 0.701961, 0.517647 )
+position = Vector2( -1.00255, 8.99915 )
+disabled = true
+
+[node name="LeftTop" type="RayCast2D" parent="."]
+visible = false
+modulate = Color( 0.517647, 0.0470588, 0.0470588, 0.533333 )
+position = Vector2( 0, -11 )
+enabled = true
+cast_to = Vector2( -11, 0 )
+
+[node name="LeftMid" type="RayCast2D" parent="."]
+visible = false
+modulate = Color( 0.517647, 0.0470588, 0.0470588, 0.533333 )
+enabled = true
+cast_to = Vector2( -11, 0 )
+
+[node name="RightTop" type="RayCast2D" parent="."]
+visible = false
+modulate = Color( 0.517647, 0.0470588, 0.0470588, 0.533333 )
+position = Vector2( 0, -11 )
+enabled = true
+cast_to = Vector2( 11, 0 )
+
+[node name="RightMid" type="RayCast2D" parent="."]
+visible = false
+modulate = Color( 0.517647, 0.0470588, 0.0470588, 0.533333 )
+enabled = true
+cast_to = Vector2( 11, 0 )
+
+[node name="LeftBottom" type="RayCast2D" parent="."]
+visible = false
+modulate = Color( 0.517647, 0.0470588, 0.0470588, 0.533333 )
+position = Vector2( -0.00936816, 11 )
+enabled = true
+cast_to = Vector2( -11, 0 )
+
+[node name="RightBottom" type="RayCast2D" parent="."]
+visible = false
+modulate = Color( 0.517647, 0.0470588, 0.0470588, 0.533333 )
+position = Vector2( -0.00936816, 11 )
+enabled = true
+cast_to = Vector2( 11, 0 )
+
+[connection signal="ready" from="." to="FSM" method="_on_Player_ready"]
+[connection signal="animation_finished" from="Characters/X/Sprite/Animator" to="FSM" method="_on_Animator_animation_finished"]
+[connection signal="change_animation" from="Characters/X/Sprite/Animator" to="FSM" method="_on_Animator_change_animation"]
